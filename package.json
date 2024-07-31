@@ -4,9 +4,9 @@
   "description": "Crush Reference for Zotero",
   "config": {
     "addonName": "Crush Reference",
-    "addonID": "zoteroreference@polygon.org",
-    "addonRef": "zoteroreference",
-    "addonInstance": "ZoteroReference",
+    "addonID": "crushref@polygon.org",
+    "addonRef": "crushreference",
+    "addonInstance": "CrushReference",
     "releasepage": "https://github.com/rockcor/zotero-reference/releases/latest/download/zotero-reference.xpi",
     "updaterdf": "https://raw.githubusercontent.com/rockcor/zotero-reference/bootstrap/update.json"
   },
@@ -73,10 +73,23 @@
     "cross-env": "^7.0.3",
     "esbuild": "^0.17.7",
     "minimist": "^1.2.8",
-    "release-it": "^15.6.0",
+    "release-it": "^15.11.0",
     "replace-in-file": "^6.3.5",
     "typescript": "^4.9.5",
     "uglify-js": "^3.17.4",
     "zotero-types": "^1.0.9"
+  },
+  "release-it": {
+    "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true
+    },
+    "hooks": {
+      "after:bump": "npm run build",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
   }
 }
