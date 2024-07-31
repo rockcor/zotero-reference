@@ -22,7 +22,7 @@ async function startup({ id, version, resourceURI, rootURI }, reason) {
   ].getService(Components.interfaces.amIAddonManagerStartup);
   var manifestURI = Services.io.newURI(rootURI + "manifest.json");
   chromeHandle = aomStartup.registerChrome(manifestURI, [
-    ["content", "zoteroreference", rootURI + "chrome/content/"],
+    ["content", "crushreference", rootURI + "chrome/content/"],
   ]);
 
   /**
@@ -37,17 +37,17 @@ async function startup({ id, version, resourceURI, rootURI }, reason) {
   ctx._globalThis = ctx;
 
   Services.scriptloader.loadSubScript(
-    `${rootURI}/chrome/content/scripts/zoteroreference.js`,
+    `${rootURI}/chrome/content/scripts/crushreference.js`,
     ctx,
   );
 }
 
 async function onMainWindowLoad({ window }, reason) {
-  Zotero.ZoteroReference?.hooks.onMainWindowLoad(window);
+  Zotero.CrushReference?.hooks.onMainWindowLoad(window);
 }
 
 async function onMainWindowUnload({ window }, reason) {
-  Zotero.ZoteroReference?.hooks.onMainWindowUnload(window);
+  Zotero.CrushReference?.hooks.onMainWindowUnload(window);
 }
 
 function shutdown({ id, version, resourceURI, rootURI }, reason) {
@@ -60,13 +60,13 @@ function shutdown({ id, version, resourceURI, rootURI }, reason) {
       Components.interfaces.nsISupports,
     ).wrappedJSObject;
   }
-  Zotero.ZoteroReference?.hooks.onShutdown();
+  Zotero.CrushReference?.hooks.onShutdown();
 
   Cc["@mozilla.org/intl/stringbundle;1"]
     .getService(Components.interfaces.nsIStringBundleService)
     .flushBundles();
 
-  Cu.unload(`${rootURI}/chrome/content/scripts/zoteroreference.js`);
+  Cu.unload(`${rootURI}/chrome/content/scripts/crushreference.js`);
 
   if (chromeHandle) {
     chromeHandle.destruct();

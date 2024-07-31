@@ -1,10 +1,10 @@
 {
   "name": "zotero-reference",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Crush Reference for Zotero",
   "config": {
     "addonName": "Crush Reference",
-    "addonID": "crushref@polygon.org",
+    "addonID": "crushref@rockcor.org",
     "addonRef": "crushreference",
     "addonInstance": "CrushReference",
     "releasepage": "https://github.com/rockcor/zotero-reference/releases/latest/download/zotero-reference.xpi",
@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/muisedestiny/zotero-reference.git"
+    "url": "git+https://github.com/rockcor/zotero-reference.git"
   },
   "author": "Polygon",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/muisedestiny/zotero-reference/issues"
+    "url": "https://github.com/rockcor/zotero-reference/issues"
   },
-  "homepage": "https://github.com/MuiseDestiny/zotero-reference#readme",
+  "homepage": "https://github.com/rockcor/zotero-reference#readme",
   "dependencies": {
     "@progress/pako-esm": "^1.0.1",
     "chokidar": "^3.5.3",
