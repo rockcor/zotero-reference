@@ -1,14 +1,14 @@
 {
   "name": "zotero-reference",
-  "version": "0.6.4",
+  "version": "0.9.0",
   "description": "Crush Reference for Zotero",
   "config": {
     "addonName": "Crush Reference",
     "addonID": "zoteroreference@polygon.org",
     "addonRef": "zoteroreference",
     "addonInstance": "ZoteroReference",
-    "releasepage": "https://github.com/muisedestiny/zotero-reference/releases/latest/download/zotero-reference.xpi",
-    "updaterdf": "https://raw.githubusercontent.com/muisedestiny/zotero-reference/bootstrap/update.json"
+    "releasepage": "https://github.com/rockcor/zotero-reference/releases/latest/download/zotero-reference.xpi",
+    "updaterdf": "https://raw.githubusercontent.com/rockcor/zotero-reference/bootstrap/update.json"
   },
   "main": "src/index.ts",
   "scripts": {

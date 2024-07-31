@@ -215,13 +215,14 @@ class API {
   }
 
   // For DOI
+  let head = {'x-api-key': 'UInvJexiUm39sANjHPX3GOG887qU5Qw5dwAiSSl1'}
   async getDOIBaseInfo(DOI: string): Promise<ItemBaseInfo | undefined> {
     const routes: any = {
       semanticscholar: `https://api.semanticscholar.org/graph/v1/paper/${DOI}?fields=title,year,authors`,
       unpaywall: `https://api.unpaywall.org/v2/${DOI}?email=ZoteroReference@polygon.org`
     }
     for (let route in routes) {
-      let response = await this.requests.get(routes[route])
+      let response = await this.requests.get(routes[route],headers=head)
       if (response) {
         response.DOI = DOI
         return this.Info[route as keyof typeof this.Info](response) as ItemBaseInfo
@@ -235,7 +236,7 @@ class API {
    */
   async getDOIInfoBySemanticscholar(DOI: string): Promise<ItemInfo | undefined> {
     const api = `https://api.semanticscholar.org/graph/v1/paper/${DOI}?fields=title,authors,abstract,year,journal,fieldsOfStudy,publicationVenue,publicationDate`
-    let response = await this.requests.get(api)
+    let response = await this.requests.get(api,headers=head)
     if (response) {
       response.DOI = DOI
       if (!response.abstract) {
@@ -289,7 +290,7 @@ class API {
     // const api = `https://www.semanticscholar.org/api/1/search/paper/${res.paperId}/citations`
     let response = await this.requests.get(api, "json", {
       cookie: "aws-waf-token=fcf9f43b-d494-44a8-8806-da20c50d9457:AQoAaIgZ+Q0AAAAA:z/ZtlDV2Oz/Ymw+RFbJ0vnEAl1/wBKTH6I4/INUou3Qqkm00bibIWkYKq0w3qq4yxB2EtdBTtRT7Q2MBPjx17WmPmcVznf7mTMTwFQjmJOB2VgQeoBzsmuzVlI/l/NBlyTFdH8xEKYYWbXB8R5oK9o7JxolugTzDKvLX4Pc57cdkbCA5A6AIExi/Wm16"
-    })
+    },headers=head)
     ztoolkit.log(response)
     if (response) {
       let arr: ItemInfo[] = response.papers.map((i: any) => {
@@ -344,7 +345,7 @@ class API {
       "requireViewablePdf": false,
       "fieldsOfStudy": [],
       "useS2FosFields": true
-    })
+    },headers=head)
     ztoolkit.log(response)
     if (response) {
       let arr: ItemInfo[] = response.results.map((i: any) => {
