@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Crush Reference",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Crush Reference for Zotero",
-  "homepage_url": "https://github.com/MuiseDestiny/zotero-reference#readme",
+  "homepage_url": "https://github.com/rockcor/zotero-reference#readme",
   "author": "Polygon",
   "icons": {
     "48": "chrome/content/icons/favicon@0.5x.png",
@@ -11,7 +11,7 @@
   },
   "applications": {
     "zotero": {
-      "id": "crushref@polygon.org",
+      "id": "crushref@rockcor.org",
       "update_url": "https://raw.githubusercontent.com/rockcor/zotero-reference/bootstrap/update.json",
       "strict_min_version": "6.999",
       "strict_max_version": "7.0.*"
