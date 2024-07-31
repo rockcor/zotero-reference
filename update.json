@@ -3,7 +3,7 @@
     "crushref@rockcor.org": {
       "updates": [
         {
-          "version": "0.9.2",
+          "version": "0.9.3",
           "update_link": "https://github.com/rockcor/zotero-reference/releases/latest/download/zotero-reference.xpi",
           "applications": {
             "gecko": {
@@ -12,7 +12,7 @@
           }
         },
         {
-          "version": "0.9.2",
+          "version": "0.9.3",
           "update_link": "https://github.com/rockcor/zotero-reference/releases/latest/download/zotero-reference.xpi",
           "applications": {
             "zotero": {
